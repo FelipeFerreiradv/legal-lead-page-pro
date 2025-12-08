@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone, Scale } from "lucide-react";
+import { Menu, X, Phone, Code2 } from "lucide-react";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,9 +16,9 @@ export function Header() {
 
   const navLinks = [
     { href: "#servicos", label: "Serviços" },
-    { href: "#diferenciais", label: "Diferenciais" },
+    { href: "#portfolio", label: "Portfólio" },
     { href: "#processo", label: "Como Funciona" },
-    { href: "#depoimentos", label: "Depoimentos" },
+    { href: "#precos", label: "Preços" },
     { href: "#faq", label: "FAQ" },
     { href: "#contato", label: "Contato" },
   ];
@@ -44,17 +44,17 @@ export function Header() {
         <a
           href="#"
           className="flex items-center gap-3 group"
-          aria-label="Silva & Associados - Página inicial"
+          aria-label="ONP - Página inicial"
         >
           <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center shadow-gold group-hover:shadow-gold-lg transition-shadow duration-300">
-            <Scale className="w-5 h-5 text-primary-foreground" />
+            <Code2 className="w-5 h-5 text-primary-foreground" />
           </div>
           <div className="hidden sm:block">
             <span className="font-display text-xl font-semibold text-foreground">
-              Silva & Associados
+              O Novo Programador
             </span>
             <span className="block text-xs text-muted-foreground tracking-widest uppercase">
-              Advocacia
+              Sites para Advocacia
             </span>
           </div>
         </a>
@@ -75,19 +75,20 @@ export function Header() {
         {/* CTA & Phone */}
         <div className="hidden md:flex items-center gap-4">
           <a
-            href="tel:+5511999999999"
+            href="https://wa.me/5511999999999"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
-            aria-label="Ligar para (11) 99999-9999"
           >
             <Phone className="w-4 h-4" />
-            <span className="hidden xl:inline">(11) 99999-9999</span>
+            <span className="hidden xl:inline">WhatsApp</span>
           </a>
           <Button
             variant="hero"
             size="lg"
             onClick={() => scrollToSection("#contato")}
           >
-            Agende sua Consulta
+            Solicitar Orçamento
           </Button>
         </div>
 
@@ -115,16 +116,9 @@ export function Header() {
                 {link.label}
               </button>
             ))}
-            <div className="pt-4 border-t border-border/50 flex flex-col gap-3">
-              <a
-                href="tel:+5511999999999"
-                className="flex items-center gap-2 text-muted-foreground hover:text-primary"
-              >
-                <Phone className="w-4 h-4" />
-                (11) 99999-9999
-              </a>
-              <Button variant="hero" size="lg" onClick={() => scrollToSection("#contato")}>
-                Agende sua Consulta
+            <div className="pt-4 border-t border-border/50">
+              <Button variant="hero" size="lg" className="w-full" onClick={() => scrollToSection("#contato")}>
+                Solicitar Orçamento
               </Button>
             </div>
           </nav>

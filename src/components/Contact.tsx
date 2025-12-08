@@ -10,9 +10,10 @@ interface FormData {
   name: string;
   email: string;
   phone: string;
+  service: string;
   message: string;
   consent: boolean;
-  honeypot: string; // Anti-spam field
+  honeypot: string;
 }
 
 interface FormErrors {
@@ -28,6 +29,7 @@ export function Contact() {
     name: "",
     email: "",
     phone: "",
+    service: "",
     message: "",
     consent: false,
     honeypot: "",
@@ -40,7 +42,6 @@ export function Contact() {
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
 
-    // Name validation
     if (!formData.name.trim()) {
       newErrors.name = "Por favor, informe seu nome.";
     } else if (formData.name.trim().length < 3) {
@@ -49,7 +50,6 @@ export function Contact() {
       newErrors.name = "O nome deve ter no máximo 100 caracteres.";
     }
 
-    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email.trim()) {
       newErrors.email = "Por favor, informe seu e-mail.";
@@ -59,7 +59,6 @@ export function Contact() {
       newErrors.email = "O e-mail deve ter no máximo 255 caracteres.";
     }
 
-    // Phone validation
     const phoneRegex = /^[\d\s\-\(\)]+$/;
     if (!formData.phone.trim()) {
       newErrors.phone = "Por favor, informe seu telefone.";
@@ -67,16 +66,14 @@ export function Contact() {
       newErrors.phone = "Por favor, informe um telefone válido.";
     }
 
-    // Message validation
     if (!formData.message.trim()) {
-      newErrors.message = "Por favor, descreva brevemente seu caso.";
+      newErrors.message = "Por favor, descreva seu projeto.";
     } else if (formData.message.trim().length < 10) {
       newErrors.message = "A mensagem deve ter pelo menos 10 caracteres.";
     } else if (formData.message.trim().length > 1000) {
       newErrors.message = "A mensagem deve ter no máximo 1000 caracteres.";
     }
 
-    // Consent validation
     if (!formData.consent) {
       newErrors.consent = "Você precisa aceitar os termos para continuar.";
     }
@@ -88,7 +85,6 @@ export function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Honeypot check - if filled, it's a bot
     if (formData.honeypot) {
       return;
     }
@@ -101,18 +97,17 @@ export function Contact() {
     setIsSubmitting(true);
 
     try {
-      // Simulate API call - Replace with actual endpoint
+      // Simulate API call - Replace with actual endpoint from GitHub repo
       await new Promise((resolve) => setTimeout(resolve, 1500));
 
-      // Success
       setIsSubmitted(true);
-      toast.success("Mensagem enviada com sucesso! Entraremos em contato em breve.");
+      toast.success("Mensagem enviada com sucesso! Entrarei em contato em breve.");
 
-      // Reset form
       setFormData({
         name: "",
         email: "",
         phone: "",
+        service: "",
         message: "",
         consent: false,
         honeypot: "",
@@ -125,11 +120,10 @@ export function Contact() {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    // Clear error when user starts typing
     if (errors[name as keyof FormErrors]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
@@ -146,80 +140,59 @@ export function Contact() {
   return (
     <section
       id="contato"
-      className="py-24 relative overflow-hidden"
+      className="py-24 bg-card relative overflow-hidden"
       aria-labelledby="contato-title"
     >
-      {/* Background decoration */}
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl translate-y-1/2 translate-x-1/2" />
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block text-primary text-sm font-medium uppercase tracking-widest mb-4 font-body">
-            Fale Conosco
+            Contato
           </span>
           <h2
             id="contato-title"
             className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6"
           >
-            Entre em <span className="text-gold-gradient">contato</span>
+            Vamos criar seu{" "}
+            <span className="text-gold-gradient">projeto?</span>
           </h2>
           <div className="gold-line mb-6" />
           <p className="text-muted-foreground text-lg font-body">
-            Estamos prontos para ajudar. Preencha o formulário e responderemos em até 24
-            horas úteis.
+            Preencha o formulário e receba um orçamento personalizado em até 24 horas.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Info */}
           <div className="space-y-8">
-            <div className="bg-card rounded-2xl p-8 border border-border">
+            <div className="bg-background rounded-2xl p-8 border border-border">
               <h3 className="font-display text-2xl font-semibold text-foreground mb-6">
-                Informações de Contato
+                Fale Comigo
               </h3>
 
               <div className="space-y-6">
                 <a
-                  href="https://maps.google.com"
+                  href="https://wa.me/5511999999999"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-4 group"
-                >
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-                    <MapPin className="w-5 h-5 text-primary group-hover:text-primary-foreground" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-foreground mb-1">Endereço</p>
-                    <p className="text-muted-foreground text-sm font-body">
-                      Av. Paulista, 1000 - Sala 1010
-                      <br />
-                      Bela Vista, São Paulo - SP
-                      <br />
-                      CEP: 01310-100
-                    </p>
-                  </div>
-                </a>
-
-                <a
-                  href="tel:+5511999999999"
                   className="flex items-start gap-4 group"
                 >
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
                     <Phone className="w-5 h-5 text-primary group-hover:text-primary-foreground" />
                   </div>
                   <div>
-                    <p className="font-medium text-foreground mb-1">Telefone</p>
+                    <p className="font-medium text-foreground mb-1">WhatsApp</p>
                     <p className="text-muted-foreground text-sm font-body">
                       (11) 99999-9999
                       <br />
-                      (11) 3333-3333
+                      <span className="text-primary">Clique para conversar</span>
                     </p>
                   </div>
                 </a>
 
                 <a
-                  href="mailto:contato@silvaadvocacia.com.br"
+                  href="mailto:contato@onovoprogramador.com"
                   className="flex items-start gap-4 group"
                 >
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
@@ -228,46 +201,65 @@ export function Contact() {
                   <div>
                     <p className="font-medium text-foreground mb-1">E-mail</p>
                     <p className="text-muted-foreground text-sm font-body">
-                      contato@silvaadvocacia.com.br
+                      contato@onovoprogramador.com
                     </p>
                   </div>
                 </a>
 
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                    <MapPin className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground mb-1">Localização</p>
+                    <p className="text-muted-foreground text-sm font-body">
+                      São Paulo, SP - Brasil
+                      <br />
+                      Atendimento remoto para todo o país
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
                     <Clock className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <p className="font-medium text-foreground mb-1">
-                      Horário de Atendimento
-                    </p>
+                    <p className="font-medium text-foreground mb-1">Horário</p>
                     <p className="text-muted-foreground text-sm font-body">
                       Segunda a Sexta: 9h às 18h
                       <br />
-                      Sábados: 9h às 13h
+                      Respondo em até 24h
                     </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Map placeholder */}
-            <div className="bg-card rounded-2xl overflow-hidden border border-border h-64">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0976951333!2d-46.65512!3d-23.564616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Localização do escritório"
-              />
+            {/* CTA Box */}
+            <div className="bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl p-8 border border-primary/30">
+              <h4 className="font-display text-xl font-semibold text-foreground mb-3">
+                Prefere uma conversa rápida?
+              </h4>
+              <p className="text-muted-foreground font-body mb-4">
+                Clique no botão abaixo e fale diretamente comigo pelo WhatsApp.
+              </p>
+              <Button
+                variant="hero"
+                size="lg"
+                className="w-full"
+                onClick={() => window.open("https://wa.me/5511999999999?text=Olá! Vim pelo site e gostaria de um orçamento.", "_blank")}
+              >
+                <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+                Chamar no WhatsApp
+              </Button>
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="bg-card rounded-2xl p-8 border border-border shadow-lg">
+          <div className="bg-background rounded-2xl p-8 border border-border shadow-lg">
             {isSubmitted ? (
               <div className="flex flex-col items-center justify-center h-full py-12 text-center">
                 <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mb-6">
@@ -277,8 +269,8 @@ export function Contact() {
                   Mensagem Enviada!
                 </h3>
                 <p className="text-muted-foreground font-body mb-6 max-w-sm">
-                  Obrigado pelo contato. Nossa equipe analisará seu caso e retornará em
-                  até 24 horas úteis.
+                  Obrigado pelo contato! Analisarei seu projeto e retornarei com um 
+                  orçamento personalizado em até 24 horas.
                 </p>
                 <Button variant="outline" onClick={() => setIsSubmitted(false)}>
                   Enviar nova mensagem
@@ -287,11 +279,10 @@ export function Contact() {
             ) : (
               <>
                 <h3 className="font-display text-2xl font-semibold text-foreground mb-6">
-                  Envie sua Mensagem
+                  Solicite seu Orçamento
                 </h3>
 
                 <form onSubmit={handleSubmit} className="space-y-6" noValidate>
-                  {/* Honeypot field - hidden from users */}
                   <div className="hidden" aria-hidden="true">
                     <Input
                       type="text"
@@ -304,10 +295,7 @@ export function Contact() {
                   </div>
 
                   <div>
-                    <label
-                      htmlFor="name"
-                      className="block text-sm font-medium text-foreground mb-2 font-body"
-                    >
+                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2 font-body">
                       Nome completo *
                     </label>
                     <Input
@@ -317,15 +305,11 @@ export function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Seu nome"
-                      aria-describedby={errors.name ? "name-error" : undefined}
                       aria-invalid={!!errors.name}
                       className={errors.name ? "border-destructive" : ""}
                     />
                     {errors.name && (
-                      <p
-                        id="name-error"
-                        className="mt-2 text-sm text-destructive flex items-center gap-1"
-                      >
+                      <p className="mt-2 text-sm text-destructive flex items-center gap-1">
                         <AlertCircle className="w-4 h-4" />
                         {errors.name}
                       </p>
@@ -334,10 +318,7 @@ export function Contact() {
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label
-                        htmlFor="email"
-                        className="block text-sm font-medium text-foreground mb-2 font-body"
-                      >
+                      <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2 font-body">
                         E-mail *
                       </label>
                       <Input
@@ -347,15 +328,11 @@ export function Contact() {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="seu@email.com"
-                        aria-describedby={errors.email ? "email-error" : undefined}
                         aria-invalid={!!errors.email}
                         className={errors.email ? "border-destructive" : ""}
                       />
                       {errors.email && (
-                        <p
-                          id="email-error"
-                          className="mt-2 text-sm text-destructive flex items-center gap-1"
-                        >
+                        <p className="mt-2 text-sm text-destructive flex items-center gap-1">
                           <AlertCircle className="w-4 h-4" />
                           {errors.email}
                         </p>
@@ -363,10 +340,7 @@ export function Contact() {
                     </div>
 
                     <div>
-                      <label
-                        htmlFor="phone"
-                        className="block text-sm font-medium text-foreground mb-2 font-body"
-                      >
+                      <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2 font-body">
                         Telefone *
                       </label>
                       <Input
@@ -382,15 +356,11 @@ export function Contact() {
                           }
                         }}
                         placeholder="(11) 99999-9999"
-                        aria-describedby={errors.phone ? "phone-error" : undefined}
                         aria-invalid={!!errors.phone}
                         className={errors.phone ? "border-destructive" : ""}
                       />
                       {errors.phone && (
-                        <p
-                          id="phone-error"
-                          className="mt-2 text-sm text-destructive flex items-center gap-1"
-                        >
+                        <p className="mt-2 text-sm text-destructive flex items-center gap-1">
                           <AlertCircle className="w-4 h-4" />
                           {errors.phone}
                         </p>
@@ -399,28 +369,43 @@ export function Contact() {
                   </div>
 
                   <div>
-                    <label
-                      htmlFor="message"
-                      className="block text-sm font-medium text-foreground mb-2 font-body"
+                    <label htmlFor="service" className="block text-sm font-medium text-foreground mb-2 font-body">
+                      Serviço de interesse
+                    </label>
+                    <select
+                      id="service"
+                      name="service"
+                      value={formData.service}
+                      onChange={handleChange}
+                      className="flex h-12 w-full rounded-md border border-border bg-card px-4 py-3 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:border-primary transition-all duration-300 font-body"
                     >
-                      Descreva seu caso *
+                      <option value="">Selecione um serviço</option>
+                      <option value="landing-page">Landing Page (R$ 800 - R$ 1.500)</option>
+                      <option value="site-institucional">Site Institucional (R$ 1.500 - R$ 3.000)</option>
+                      <option value="e-commerce">E-Commerce (R$ 3.000 - R$ 8.000)</option>
+                      <option value="app-mobile">Aplicativo Mobile (R$ 5.000 - R$ 15.000)</option>
+                      <option value="sistema-web">Sistema Web (R$ 5.000 - R$ 20.000)</option>
+                      <option value="manutencao">Manutenção Mensal</option>
+                      <option value="outro">Outro</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2 font-body">
+                      Descreva seu projeto *
                     </label>
                     <Textarea
                       id="message"
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Conte-nos brevemente sobre sua situação..."
+                      placeholder="Conte-me sobre seu escritório e o que você precisa..."
                       rows={5}
-                      aria-describedby={errors.message ? "message-error" : undefined}
                       aria-invalid={!!errors.message}
                       className={errors.message ? "border-destructive" : ""}
                     />
                     {errors.message && (
-                      <p
-                        id="message-error"
-                        className="mt-2 text-sm text-destructive flex items-center gap-1"
-                      >
+                      <p className="mt-2 text-sm text-destructive flex items-center gap-1">
                         <AlertCircle className="w-4 h-4" />
                         {errors.message}
                       </p>
@@ -435,37 +420,23 @@ export function Contact() {
                       id="consent"
                       checked={formData.consent}
                       onCheckedChange={(checked) => {
-                        setFormData((prev) => ({
-                          ...prev,
-                          consent: checked as boolean,
-                        }));
+                        setFormData((prev) => ({ ...prev, consent: checked as boolean }));
                         if (errors.consent) {
                           setErrors((prev) => ({ ...prev, consent: undefined }));
                         }
                       }}
-                      aria-describedby={errors.consent ? "consent-error" : undefined}
                       className="mt-1"
                     />
                     <div>
-                      <label
-                        htmlFor="consent"
-                        className="text-sm text-muted-foreground font-body cursor-pointer"
-                      >
+                      <label htmlFor="consent" className="text-sm text-muted-foreground font-body cursor-pointer">
                         Li e concordo com a{" "}
-                        <a
-                          href="#politica-privacidade"
-                          className="text-primary hover:underline"
-                        >
+                        <a href="#politica-privacidade" className="text-primary hover:underline">
                           Política de Privacidade
                         </a>{" "}
-                        e autorizo o tratamento dos meus dados pessoais conforme a LGPD.
-                        *
+                        e autorizo o tratamento dos meus dados conforme a LGPD. *
                       </label>
                       {errors.consent && (
-                        <p
-                          id="consent-error"
-                          className="mt-1 text-sm text-destructive flex items-center gap-1"
-                        >
+                        <p className="mt-1 text-sm text-destructive flex items-center gap-1">
                           <AlertCircle className="w-4 h-4" />
                           {errors.consent}
                         </p>
@@ -473,13 +444,7 @@ export function Contact() {
                     </div>
                   </div>
 
-                  <Button
-                    type="submit"
-                    variant="hero"
-                    size="xl"
-                    className="w-full"
-                    disabled={isSubmitting}
-                  >
+                  <Button type="submit" variant="hero" size="xl" className="w-full" disabled={isSubmitting}>
                     {isSubmitting ? (
                       <>
                         <span className="animate-spin mr-2">⏳</span>
@@ -487,14 +452,14 @@ export function Contact() {
                       </>
                     ) : (
                       <>
-                        Enviar Mensagem
+                        Solicitar Orçamento
                         <Send className="w-5 h-5" />
                       </>
                     )}
                   </Button>
 
                   <p className="text-xs text-center text-muted-foreground font-body">
-                    Seus dados estão seguros conosco. Respondemos em até 24h úteis.
+                    Respondo todos os orçamentos em até 24 horas úteis.
                   </p>
                 </form>
               </>

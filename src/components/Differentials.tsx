@@ -1,35 +1,35 @@
-import { Clock, Shield, MessageSquare, Target, Award, HeartHandshake } from "lucide-react";
+import { Scale, Palette, Zap, Shield, Smartphone, Search } from "lucide-react";
 
 const differentials = [
   {
-    icon: Clock,
-    title: "Agilidade",
-    description: "Respostas rápidas e acompanhamento em tempo real de todos os processos.",
+    icon: Scale,
+    title: "Especialista em Advocacia",
+    description: "Entendo as necessidades específicas do mercado jurídico e as regras da OAB para publicidade.",
+  },
+  {
+    icon: Palette,
+    title: "Design Sofisticado",
+    description: "Sites elegantes que transmitem credibilidade e profissionalismo para seus clientes.",
+  },
+  {
+    icon: Zap,
+    title: "Entrega Rápida",
+    description: "Prazo médio de 15 dias para landing pages e 30 dias para sites completos.",
   },
   {
     icon: Shield,
-    title: "Confidencialidade",
-    description: "Sigilo absoluto e proteção de dados em conformidade com a LGPD.",
+    title: "Segurança e LGPD",
+    description: "Sites com SSL, proteção de dados e formulários em conformidade com a LGPD.",
   },
   {
-    icon: MessageSquare,
-    title: "Comunicação Clara",
-    description: "Explicamos cada etapa do processo de forma simples e acessível.",
+    icon: Smartphone,
+    title: "100% Responsivo",
+    description: "Seu site funciona perfeitamente em celulares, tablets e computadores.",
   },
   {
-    icon: Target,
-    title: "Foco em Resultados",
-    description: "Estratégias jurídicas orientadas para alcançar seus objetivos.",
-  },
-  {
-    icon: Award,
-    title: "Experiência Comprovada",
-    description: "Equipe com mais de 15 anos de atuação no mercado jurídico.",
-  },
-  {
-    icon: HeartHandshake,
-    title: "Atendimento Humanizado",
-    description: "Tratamos cada cliente de forma única, com empatia e dedicação.",
+    icon: Search,
+    title: "Otimizado para Google",
+    description: "SEO integrado para seu escritório aparecer nas buscas e atrair mais clientes.",
   },
 ];
 
@@ -47,24 +47,25 @@ export function Differentials() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block text-primary text-sm font-medium uppercase tracking-widest mb-4 font-body">
-            Por que nos escolher
+            Por que me escolher
           </span>
           <h2
             id="diferenciais-title"
             className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6"
           >
-            Nossos <span className="text-gold-gradient">diferenciais</span>
+            Diferenciais do meu{" "}
+            <span className="text-gold-gradient">trabalho</span>
           </h2>
           <div className="gold-line mb-6" />
           <p className="text-muted-foreground text-lg font-body">
-            Combinamos tradição jurídica com inovação para oferecer a melhor experiência
-            aos nossos clientes.
+            Não sou apenas um desenvolvedor — sou parceiro estratégico para a presença digital 
+            do seu escritório.
           </p>
         </div>
 
         {/* Differentials Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {differentials.map((item, index) => (
+          {differentials.map((item) => (
             <div
               key={item.title}
               className="group flex gap-5 p-6 rounded-xl border border-transparent hover:border-primary/20 hover:bg-muted/30 transition-all duration-300"
