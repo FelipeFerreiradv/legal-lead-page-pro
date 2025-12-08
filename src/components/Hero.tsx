@@ -1,10 +1,17 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield, Award, Users } from "lucide-react";
+import { ArrowRight, Sparkles, Monitor, Rocket } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 export function Hero() {
   const scrollToContact = () => {
     const element = document.querySelector("#contato");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const scrollToPricing = () => {
+    const element = document.querySelector("#precos");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -33,9 +40,9 @@ export function Hero() {
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 mb-8 animate-fade-in-up">
-            <Shield className="w-4 h-4 text-primary" />
+            <Sparkles className="w-4 h-4 text-primary" />
             <span className="text-sm text-foreground/80 font-body">
-              Mais de 15 anos de excelência jurídica
+              Especialista em sites para escritórios de advocacia
             </span>
           </div>
 
@@ -45,10 +52,8 @@ export function Hero() {
             className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-6 animate-fade-in-up"
             style={{ animationDelay: "100ms" }}
           >
-            Defenda seus{" "}
-            <span className="text-gold-gradient">direitos</span>
-            <br />
-            com quem entende
+            Seu escritório merece um{" "}
+            <span className="text-gold-gradient">site à altura</span>
           </h1>
 
           {/* Subtitle */}
@@ -56,9 +61,8 @@ export function Hero() {
             className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 font-body leading-relaxed animate-fade-in-up"
             style={{ animationDelay: "200ms" }}
           >
-            Assessoria jurídica especializada para pessoas físicas e empresas.
-            Atendimento humanizado, estratégias personalizadas e resultados
-            comprovados.
+            Desenvolvo sites profissionais, landing pages e sistemas web para advogados
+            que querem se destacar no mercado e conquistar mais clientes.
           </p>
 
           {/* CTAs */}
@@ -67,11 +71,11 @@ export function Hero() {
             style={{ animationDelay: "300ms" }}
           >
             <Button variant="hero" size="xl" onClick={scrollToContact}>
-              Agende sua Avaliação Gratuita
+              Solicitar Orçamento Grátis
               <ArrowRight className="w-5 h-5" />
             </Button>
-            <Button variant="elegant" size="xl" onClick={scrollToContact}>
-              Fale com um Advogado Agora
+            <Button variant="elegant" size="xl" onClick={scrollToPricing}>
+              Ver Planos e Preços
             </Button>
           </div>
 
@@ -82,29 +86,29 @@ export function Hero() {
           >
             <div className="flex flex-col items-center gap-2 p-4">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-1">
-                <Award className="w-6 h-6 text-primary" />
+                <Monitor className="w-6 h-6 text-primary" />
               </div>
-              <span className="text-3xl font-display font-bold text-foreground">+500</span>
+              <span className="text-3xl font-display font-bold text-foreground">50+</span>
               <span className="text-sm text-muted-foreground font-body">
-                Casos de sucesso
+                Sites entregues
               </span>
             </div>
             <div className="flex flex-col items-center gap-2 p-4">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-1">
-                <Users className="w-6 h-6 text-primary" />
+                <Rocket className="w-6 h-6 text-primary" />
               </div>
-              <span className="text-3xl font-display font-bold text-foreground">15+</span>
+              <span className="text-3xl font-display font-bold text-foreground">15 dias</span>
               <span className="text-sm text-muted-foreground font-body">
-                Anos de experiência
+                Prazo médio de entrega
               </span>
             </div>
             <div className="flex flex-col items-center gap-2 p-4">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-1">
-                <Shield className="w-6 h-6 text-primary" />
+                <Sparkles className="w-6 h-6 text-primary" />
               </div>
-              <span className="text-3xl font-display font-bold text-foreground">98%</span>
+              <span className="text-3xl font-display font-bold text-foreground">100%</span>
               <span className="text-sm text-muted-foreground font-body">
-                Taxa de satisfação
+                Clientes satisfeitos
               </span>
             </div>
           </div>

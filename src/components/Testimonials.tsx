@@ -5,34 +5,34 @@ import { Button } from "@/components/ui/button";
 const testimonials = [
   {
     id: 1,
-    name: "Roberto Mendes",
-    role: "Empresário",
+    name: "Dr. Roberto Mendes",
+    role: "Advogado Trabalhista",
     content:
-      "Excelente atendimento do início ao fim. A equipe foi extremamente profissional e conseguiu resolver meu caso empresarial de forma rápida e eficiente. Recomendo fortemente!",
+      "Meu site ficou incrível e começou a trazer clientes já na primeira semana. O processo foi muito tranquilo e o resultado superou todas as expectativas. Recomendo demais!",
     rating: 5,
   },
   {
     id: 2,
-    name: "Ana Carolina Souza",
-    role: "Médica",
+    name: "Dra. Carolina Souza",
+    role: "Advogada Criminalista",
     content:
-      "Fui muito bem atendida durante todo o processo de divórcio. Os advogados foram sensíveis à situação e me orientaram de forma clara. Gratidão pela dedicação.",
+      "Profissional extremamente competente. Entendeu exatamente o que eu precisava e entregou um site elegante que transmite a credibilidade do meu escritório.",
     rating: 5,
   },
   {
     id: 3,
-    name: "Carlos Eduardo Lima",
-    role: "Engenheiro",
+    name: "Dr. Eduardo Lima",
+    role: "Advogado Empresarial",
     content:
-      "Busquei o escritório para uma questão trabalhista e fiquei impressionado com a competência e agilidade. O resultado superou minhas expectativas.",
+      "A landing page que ele criou aumentou minhas conversões em 300%. O investimento se pagou no primeiro mês. Trabalho impecável!",
     rating: 5,
   },
   {
     id: 4,
-    name: "Mariana Alves",
-    role: "Arquiteta",
+    name: "Dra. Mariana Alves",
+    role: "Advogada de Família",
     content:
-      "Precisei de consultoria para minha empresa e encontrei profissionais extremamente qualificados. O atendimento humanizado faz toda a diferença.",
+      "Atendimento excepcional do início ao fim. Sempre disponível para ajustes e sugestões. Meu site ficou exatamente como eu imaginava.",
     rating: 5,
   },
 ];
@@ -63,8 +63,8 @@ export function Testimonials() {
 
   return (
     <section
-      id="depoimentos"
-      className="py-24 bg-card relative overflow-hidden"
+      id="portfolio"
+      className="py-24 relative overflow-hidden"
       aria-labelledby="depoimentos-title"
     >
       {/* Background decoration */}
@@ -80,7 +80,7 @@ export function Testimonials() {
             id="depoimentos-title"
             className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6"
           >
-            O que nossos clientes{" "}
+            O que meus clientes{" "}
             <span className="text-gold-gradient">dizem</span>
           </h2>
           <div className="gold-line mb-6" />
@@ -93,7 +93,7 @@ export function Testimonials() {
             <Quote className="absolute -top-4 left-0 w-16 h-16 text-primary/20" />
 
             {/* Testimonial */}
-            <div className="bg-background/50 rounded-2xl p-8 md:p-12 border border-border shadow-lg">
+            <div className="bg-card rounded-2xl p-8 md:p-12 border border-border shadow-lg">
               <div className="flex mb-4">
                 {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
                   <Star
@@ -104,7 +104,7 @@ export function Testimonials() {
               </div>
 
               <blockquote className="text-lg md:text-xl text-foreground font-body leading-relaxed mb-8">
-                "{testimonials[currentIndex].content}"
+                &quot;{testimonials[currentIndex].content}&quot;
               </blockquote>
 
               <div className="flex items-center gap-4">

@@ -3,34 +3,34 @@ import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
-    question: "Qual o valor de uma consulta inicial?",
+    question: "Quanto tempo leva para criar um site?",
     answer:
-      "A primeira consulta é gratuita. Nela, avaliamos seu caso, esclarecemos dúvidas e apresentamos as melhores estratégias jurídicas. Sem compromisso.",
+      "Landing pages são entregues em até 15 dias. Sites institucionais levam de 20 a 30 dias. Sistemas personalizados variam conforme a complexidade, geralmente entre 45 e 90 dias.",
   },
   {
-    question: "Vocês atendem em quais áreas do direito?",
+    question: "O site fica otimizado para o Google?",
     answer:
-      "Atuamos nas principais áreas: Direito Civil, Empresarial, Trabalhista, Família, Consumidor e Consultoria Preventiva. Nossa equipe conta com especialistas em cada área.",
+      "Sim! Todos os sites são desenvolvidos com SEO integrado, incluindo meta tags, estrutura semântica, velocidade otimizada e dados estruturados para buscadores.",
   },
   {
-    question: "Como funciona o pagamento dos honorários?",
+    question: "Vocês cuidam da hospedagem e domínio?",
     answer:
-      "Trabalhamos com flexibilidade. Oferecemos opções de pagamento à vista com desconto, parcelamento no cartão ou boleto, e em alguns casos, honorários condicionados ao êxito.",
+      "Sim! O primeiro ano de hospedagem está incluso em todos os planos. Também auxilio no registro ou transferência do seu domínio (.com.br, .adv.br, etc).",
   },
   {
-    question: "Qual o prazo médio para resolução de um caso?",
+    question: "Posso atualizar o conteúdo do site sozinho?",
     answer:
-      "Depende da complexidade e tipo de processo. Acordos extrajudiciais podem ser resolvidos em semanas. Processos judiciais variam de meses a anos. Sempre buscamos a solução mais rápida.",
+      "Sim! Sites institucionais incluem um painel administrativo simples e intuitivo. Forneço treinamento para que você gerencie textos, imagens e conteúdos.",
   },
   {
-    question: "Vocês atendem online?",
+    question: "O site segue as regras da OAB?",
     answer:
-      "Sim! Oferecemos atendimento presencial e remoto via videoconferência. Você pode resolver seu caso sem sair de casa, com toda a segurança e sigilo necessários.",
+      "Absolutamente. Conheço o Provimento 205/2021 e as diretrizes de publicidade advocatícia. Seu site será elegante e em total conformidade com as normas éticas.",
   },
   {
-    question: "Como posso acompanhar meu processo?",
+    question: "Como funciona o pagamento?",
     answer:
-      "Enviamos atualizações regulares por e-mail e WhatsApp. Além disso, você pode entrar em contato a qualquer momento para tirar dúvidas ou solicitar informações.",
+      "Trabalho com 50% de entrada e 50% na entrega. Aceito PIX, transferência e cartão de crédito em até 12x. Para projetos maiores, podemos negociar condições especiais.",
   },
 ];
 
@@ -44,7 +44,7 @@ export function FAQ() {
   return (
     <section
       id="faq"
-      className="py-24 bg-card relative overflow-hidden"
+      className="py-24 relative overflow-hidden"
       aria-labelledby="faq-title"
     >
       <div className="container mx-auto px-4 relative z-10">
@@ -67,7 +67,7 @@ export function FAQ() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="border border-border rounded-xl overflow-hidden bg-background/50 hover:border-primary/30 transition-colors duration-300"
+              className="border border-border rounded-xl overflow-hidden bg-card hover:border-primary/30 transition-colors duration-300"
             >
               <button
                 onClick={() => toggleFAQ(index)}

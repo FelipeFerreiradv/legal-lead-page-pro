@@ -1,47 +1,53 @@
-import { Scale, Building2, Users, FileText, Gavel, Briefcase } from "lucide-react";
+import { Layout, Building2, ShoppingCart, Smartphone, Settings, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const services = [
   {
-    icon: Scale,
-    title: "Direito Civil",
+    icon: Layout,
+    title: "Landing Pages",
     description:
-      "Contratos, responsabilidade civil, direito das obrigações e resolução de conflitos patrimoniais.",
-    highlight: false,
-  },
-  {
-    icon: Building2,
-    title: "Direito Empresarial",
-    description:
-      "Assessoria societária, contratos comerciais, recuperação judicial e planejamento tributário.",
+      "Páginas de alta conversão para captar clientes. Perfeita para campanhas de marketing e geração de leads qualificados.",
+    price: "R$ 800 - R$ 1.500",
     highlight: true,
   },
   {
-    icon: Users,
-    title: "Direito de Família",
+    icon: Building2,
+    title: "Sites Institucionais",
     description:
-      "Divórcio, guarda, pensão alimentícia, inventário e partilha de bens.",
+      "Sites completos e profissionais para apresentar seu escritório, áreas de atuação, equipe e credenciais.",
+    price: "R$ 1.500 - R$ 3.000",
     highlight: false,
   },
   {
-    icon: FileText,
-    title: "Direito Trabalhista",
+    icon: ShoppingCart,
+    title: "E-Commerce Jurídico",
     description:
-      "Defesa de empregados e empregadores, rescisões, acordos e ações trabalhistas.",
+      "Plataformas para venda de cursos, e-books, modelos de petições e consultorias online.",
+    price: "R$ 3.000 - R$ 8.000",
     highlight: false,
   },
   {
-    icon: Gavel,
-    title: "Direito do Consumidor",
+    icon: Smartphone,
+    title: "Aplicativos Mobile",
     description:
-      "Defesa dos direitos do consumidor, revisão contratual e ações de indenização.",
+      "Apps para acompanhamento de processos, comunicação com clientes e gestão de prazos.",
+    price: "R$ 5.000 - R$ 15.000",
     highlight: false,
   },
   {
-    icon: Briefcase,
-    title: "Consultoria Jurídica",
+    icon: Settings,
+    title: "Sistemas Web",
     description:
-      "Assessoria preventiva para empresas e pessoas físicas, evitando litígios futuros.",
+      "Sistemas personalizados de gestão de escritório, CRM jurídico e automação de documentos.",
+    price: "R$ 5.000 - R$ 20.000",
+    highlight: false,
+  },
+  {
+    icon: Wrench,
+    title: "Manutenção e Suporte",
+    description:
+      "Atualizações, correções, melhorias de desempenho e suporte técnico contínuo para seu site.",
+    price: "R$ 30 - R$ 1.000/mês",
     highlight: false,
   },
 ];
@@ -67,18 +73,19 @@ export function Services() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block text-primary text-sm font-medium uppercase tracking-widest mb-4 font-body">
-            Áreas de Atuação
+            Serviços
           </span>
           <h2
             id="servicos-title"
             className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6"
           >
-            Expertise jurídica <span className="text-gold-gradient">especializada</span>
+            Soluções digitais para{" "}
+            <span className="text-gold-gradient">advogados</span>
           </h2>
           <div className="gold-line mb-6" />
           <p className="text-muted-foreground text-lg font-body">
-            Oferecemos soluções jurídicas completas com foco em resultados e atendimento
-            personalizado para cada caso.
+            Do site simples ao sistema complexo, desenvolvo soluções sob medida para 
+            o mercado jurídico com foco em credibilidade e conversão.
           </p>
         </div>
 
@@ -92,7 +99,6 @@ export function Services() {
                   ? "bg-gradient-to-br from-primary/10 to-primary/5 border-primary/30 shadow-gold"
                   : "bg-card border-border hover:border-primary/30 hover:shadow-gold"
               }`}
-              style={{ animationDelay: `${index * 100}ms` }}
             >
               {service.highlight && (
                 <div className="absolute -top-3 right-6 px-3 py-1 bg-primary text-primary-foreground text-xs font-medium rounded-full">
@@ -114,8 +120,12 @@ export function Services() {
                 {service.title}
               </h3>
 
-              <p className="text-muted-foreground font-body leading-relaxed mb-6">
+              <p className="text-muted-foreground font-body leading-relaxed mb-4">
                 {service.description}
+              </p>
+
+              <p className="text-primary font-display text-lg font-semibold mb-6">
+                {service.price}
               </p>
 
               <Button
@@ -123,7 +133,7 @@ export function Services() {
                 className="group/btn p-0 h-auto text-primary hover:bg-transparent"
                 onClick={scrollToContact}
               >
-                Saiba mais
+                Solicitar orçamento
                 <span className="ml-2 transition-transform duration-300 group-hover/btn:translate-x-1">
                   →
                 </span>
@@ -131,6 +141,11 @@ export function Services() {
             </article>
           ))}
         </div>
+
+        {/* Note */}
+        <p className="text-center text-sm text-muted-foreground mt-8 font-body">
+          * Valores podem variar conforme complexidade e requisitos do projeto.
+        </p>
       </div>
     </section>
   );

@@ -1,40 +1,40 @@
-import { MessageSquare, FileSearch, Handshake, Gavel, CheckCircle } from "lucide-react";
+import { MessageSquare, FileSearch, PenTool, Code, Rocket } from "lucide-react";
 
 const steps = [
   {
     number: "01",
     icon: MessageSquare,
-    title: "Consulta Inicial",
+    title: "Briefing",
     description:
-      "Agende uma consulta gratuita para apresentar seu caso. Escutamos atentamente e avaliamos as melhores opções.",
+      "Conversamos sobre seu escritório, objetivos e o que você precisa. Entendo sua visão e defino os requisitos.",
   },
   {
     number: "02",
     icon: FileSearch,
-    title: "Análise do Caso",
+    title: "Proposta",
     description:
-      "Nossa equipe analisa todos os documentos e detalhes para elaborar a estratégia mais adequada.",
+      "Envio um orçamento detalhado com prazo, escopo e condições de pagamento. Sem surpresas.",
   },
   {
     number: "03",
-    icon: Handshake,
-    title: "Proposta de Honorários",
+    icon: PenTool,
+    title: "Design",
     description:
-      "Apresentamos uma proposta transparente, com valores e condições claras, sem surpresas.",
+      "Crio o layout do seu site para aprovação. Você acompanha cada etapa e pode solicitar ajustes.",
   },
   {
     number: "04",
-    icon: Gavel,
-    title: "Atuação Jurídica",
+    icon: Code,
+    title: "Desenvolvimento",
     description:
-      "Iniciamos o trabalho com acompanhamento constante e atualizações sobre cada etapa do processo.",
+      "Codifico o site com as melhores tecnologias, garantindo velocidade, segurança e SEO.",
   },
   {
     number: "05",
-    icon: CheckCircle,
-    title: "Resolução",
+    icon: Rocket,
+    title: "Lançamento",
     description:
-      "Buscamos sempre a melhor solução, seja por acordo ou decisão judicial, com total transparência.",
+      "Publico seu site, configuro domínio e e-mails. Você recebe treinamento para gerenciar o conteúdo.",
   },
 ];
 
@@ -49,7 +49,7 @@ export function Process() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block text-primary text-sm font-medium uppercase tracking-widest mb-4 font-body">
-            Como Trabalhamos
+            Como Funciona
           </span>
           <h2
             id="processo-title"
@@ -59,8 +59,8 @@ export function Process() {
           </h2>
           <div className="gold-line mb-6" />
           <p className="text-muted-foreground text-lg font-body">
-            Do primeiro contato à resolução do seu caso, acompanhamos você em cada etapa
-            com total transparência.
+            Do primeiro contato ao site no ar, acompanho você em cada etapa com total 
+            transparência.
           </p>
         </div>
 
@@ -70,7 +70,7 @@ export function Process() {
           <div className="hidden lg:block absolute top-24 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-            {steps.map((step, index) => (
+            {steps.map((step) => (
               <div
                 key={step.number}
                 className="relative group text-center lg:text-left"

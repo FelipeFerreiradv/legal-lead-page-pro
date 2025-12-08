@@ -1,4 +1,4 @@
-import { Scale, Phone, Mail, MapPin, Instagram, Linkedin, Facebook } from "lucide-react";
+import { Code2, Phone, Mail, Instagram, Linkedin, Github } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,32 +11,28 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-card border-t border-border" role="contentinfo">
+    <footer className="bg-background border-t border-border" role="contentinfo">
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <a
-              href="#"
-              className="flex items-center gap-3 mb-6 group"
-              aria-label="Silva & Associados - Página inicial"
-            >
+            <a href="#" className="flex items-center gap-3 mb-6 group" aria-label="ONP - Página inicial">
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center shadow-gold">
-                <Scale className="w-5 h-5 text-primary-foreground" />
+                <Code2 className="w-5 h-5 text-primary-foreground" />
               </div>
               <div>
                 <span className="font-display text-xl font-semibold text-foreground">
-                  Silva & Associados
+                  O Novo Programador
                 </span>
                 <span className="block text-xs text-muted-foreground tracking-widest uppercase">
-                  Advocacia
+                  Sites para Advocacia
                 </span>
               </div>
             </a>
             <p className="text-muted-foreground text-sm font-body leading-relaxed mb-6">
-              Escritório de advocacia comprometido com a excelência jurídica e o
-              atendimento humanizado. Mais de 15 anos defendendo seus direitos.
+              Desenvolvedor especializado em criar sites profissionais e sistemas 
+              web para escritórios de advocacia em todo o Brasil.
             </p>
             <div className="flex gap-4">
               <a
@@ -58,13 +54,13 @@ export function Footer() {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://github.com/FelipeFerreiradv"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                aria-label="Facebook"
+                aria-label="GitHub"
               >
-                <Facebook className="w-5 h-5" />
+                <Github className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -77,9 +73,9 @@ export function Footer() {
             <ul className="space-y-3">
               {[
                 { href: "#servicos", label: "Serviços" },
-                { href: "#diferenciais", label: "Diferenciais" },
+                { href: "#portfolio", label: "Depoimentos" },
                 { href: "#processo", label: "Como Funciona" },
-                { href: "#depoimentos", label: "Depoimentos" },
+                { href: "#precos", label: "Preços" },
                 { href: "#faq", label: "FAQ" },
                 { href: "#contato", label: "Contato" },
               ].map((link) => (
@@ -95,45 +91,19 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Legal */}
+          {/* Services */}
           <div>
             <h3 className="font-display text-lg font-semibold text-foreground mb-6">
-              Informações Legais
+              Serviços
             </h3>
             <ul className="space-y-3">
-              <li>
-                <a
-                  href="#politica-privacidade"
-                  className="text-muted-foreground hover:text-primary transition-colors duration-300 font-body text-sm"
-                >
-                  Política de Privacidade
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#termos-uso"
-                  className="text-muted-foreground hover:text-primary transition-colors duration-300 font-body text-sm"
-                >
-                  Termos de Uso
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#codigo-etica"
-                  className="text-muted-foreground hover:text-primary transition-colors duration-300 font-body text-sm"
-                >
-                  Código de Ética da OAB
-                </a>
-              </li>
+              <li className="text-muted-foreground font-body text-sm">Landing Pages</li>
+              <li className="text-muted-foreground font-body text-sm">Sites Institucionais</li>
+              <li className="text-muted-foreground font-body text-sm">E-Commerce Jurídico</li>
+              <li className="text-muted-foreground font-body text-sm">Sistemas Web</li>
+              <li className="text-muted-foreground font-body text-sm">Aplicativos Mobile</li>
+              <li className="text-muted-foreground font-body text-sm">Manutenção e Suporte</li>
             </ul>
-
-            <div className="mt-6 p-4 rounded-lg bg-muted/50 border border-border">
-              <p className="text-xs text-muted-foreground font-body">
-                <strong className="text-foreground">OAB/SP nº 123.456</strong>
-                <br />
-                Registro Seccional São Paulo
-              </p>
-            </div>
           </div>
 
           {/* Contact */}
@@ -144,22 +114,9 @@ export function Footer() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="https://maps.google.com"
+                  href="https://wa.me/5511999999999"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-3 text-muted-foreground hover:text-primary transition-colors duration-300"
-                >
-                  <MapPin className="w-5 h-5 shrink-0 mt-0.5" />
-                  <span className="font-body text-sm">
-                    Av. Paulista, 1000 - Sala 1010
-                    <br />
-                    Bela Vista, São Paulo - SP
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="tel:+5511999999999"
                   className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
                   <Phone className="w-5 h-5" />
@@ -168,16 +125,22 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:contato@silvaadvocacia.com.br"
+                  href="mailto:contato@onovoprogramador.com"
                   className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
                   <Mail className="w-5 h-5" />
-                  <span className="font-body text-sm">
-                    contato@silvaadvocacia.com.br
-                  </span>
+                  <span className="font-body text-sm">contato@onovoprogramador.com</span>
                 </a>
               </li>
             </ul>
+
+            <div className="mt-6 p-4 rounded-lg bg-muted/50 border border-border">
+              <p className="text-xs text-muted-foreground font-body">
+                <strong className="text-foreground">Atendimento Remoto</strong>
+                <br />
+                Para todo o Brasil
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -187,20 +150,16 @@ export function Footer() {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-muted-foreground font-body text-center md:text-left">
-              © {currentYear} Silva & Associados Advocacia. Todos os direitos
-              reservados.
+              © {currentYear} O Novo Programador. Todos os direitos reservados.
             </p>
-            <p className="text-xs text-muted-foreground font-body">
-              Desenvolvido com base nas{" "}
-              <a
-                href="https://onovoprogramador.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:underline"
-              >
-                soluções ONP
+            <div className="flex gap-4">
+              <a href="#politica-privacidade" className="text-xs text-muted-foreground hover:text-primary transition-colors">
+                Política de Privacidade
               </a>
-            </p>
+              <a href="#termos-uso" className="text-xs text-muted-foreground hover:text-primary transition-colors">
+                Termos de Uso
+              </a>
+            </div>
           </div>
         </div>
       </div>
