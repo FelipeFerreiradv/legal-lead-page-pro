@@ -34,22 +34,22 @@ const pricingPlans = [
     highlighted: false,
     cta: "Quero meu Site",
   },
-  {
-    name: "Sistema Personalizado",
-    description: "Soluções sob medida para seu escritório",
-    features: [
-      "Análise de requisitos completa",
-      "Desenvolvimento personalizado",
-      "CRM jurídico / Gestão de processos",
-      "Integração com APIs",
-      "Treinamento da equipe",
-      "Painel administrativo",
-      "Suporte prioritário",
-      "Documentação completa",
-    ],
-    highlighted: false,
-    cta: "Solicitar Proposta",
-  },
+  // {
+  //   name: "Sistema Personalizado",
+  //   description: "Soluções sob medida para seu escritório",
+  //   features: [
+  //     "Análise de requisitos completa",
+  //     "Desenvolvimento personalizado",
+  //     "CRM jurídico / Gestão de processos",
+  //     "Integração com APIs",
+  //     "Treinamento da equipe",
+  //     "Painel administrativo",
+  //     "Suporte prioritário",
+  //     "Documentação completa",
+  //   ],
+  //   highlighted: false,
+  //   cta: "Solicitar Proposta",
+  // },
 ];
 
 export function Pricing() {
@@ -79,7 +79,7 @@ export function Pricing() {
             id="precos-title"
             className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6"
           >
-            Planos e <span className="text-gold-gradient">valores</span>
+            Planos e <span className="text-gold-gradient">caracteristicas</span>
           </h2>
           <div className="gold-line mb-6" />
           <p className="text-muted-foreground text-lg font-body">
@@ -89,7 +89,7 @@ export function Pricing() {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {pricingPlans.map((plan) => (
             <article
               key={plan.name}

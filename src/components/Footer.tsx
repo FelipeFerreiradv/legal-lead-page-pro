@@ -35,8 +35,8 @@ export function Footer() {
               </div>
             </a>
             <p className="text-muted-foreground text-sm font-body leading-relaxed mb-6">
-              Desenvolvedor especializado em criar sites profissionais e
-              sistemas web para escritórios de advocacia em todo o Brasil.
+              Desenvolvedor especializado em criar sites profissionais para
+              escritórios de advocacia em todo o Brasil.
             </p>
             <div className="flex gap-4">
               <a
@@ -79,7 +79,7 @@ export function Footer() {
                 { href: "#servicos", label: "Serviços" },
                 { href: "#portfolio", label: "Depoimentos" },
                 { href: "#processo", label: "Como Funciona" },
-                { href: "#precos", label: "Preços" },
+                { href: "#precos", label: "Planos" },
                 { href: "#faq", label: "FAQ" },
                 { href: "#contato", label: "Contato" },
               ].map((link) => (
@@ -107,7 +107,7 @@ export function Footer() {
               <li className="text-muted-foreground font-body text-sm">
                 Sites Institucionais
               </li>
-              <li className="text-muted-foreground font-body text-sm">
+              {/* <li className="text-muted-foreground font-body text-sm">
                 E-Commerce Jurídico
               </li>
               <li className="text-muted-foreground font-body text-sm">
@@ -115,7 +115,7 @@ export function Footer() {
               </li>
               <li className="text-muted-foreground font-body text-sm">
                 Aplicativos Mobile
-              </li>
+              </li> */}
               <li className="text-muted-foreground font-body text-sm">
                 Manutenção e Suporte
               </li>

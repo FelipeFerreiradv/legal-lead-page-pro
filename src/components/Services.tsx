@@ -23,27 +23,27 @@ const services = [
       "Sites completos e profissionais para apresentar seu escritório, áreas de atuação, equipe e credenciais.",
     highlight: false,
   },
-  {
-    icon: ShoppingCart,
-    title: "E-Commerce Jurídico",
-    description:
-      "Plataformas para venda de cursos, e-books, modelos de petições e consultorias online.",
-    highlight: false,
-  },
-  {
-    icon: Smartphone,
-    title: "Aplicativos Mobile",
-    description:
-      "Apps para acompanhamento de processos, comunicação com clientes e gestão de prazos.",
-    highlight: false,
-  },
-  {
-    icon: Settings,
-    title: "Sistemas Web",
-    description:
-      "Sistemas personalizados de gestão de escritório, CRM jurídico e automação de documentos.",
-    highlight: false,
-  },
+  // {
+  //   icon: ShoppingCart,
+  //   title: "E-Commerce Jurídico",
+  //   description:
+  //     "Plataformas para venda de cursos, e-books, modelos de petições e consultorias online.",
+  //   highlight: false,
+  // },
+  // {
+  //   icon: Smartphone,
+  //   title: "Aplicativos Mobile",
+  //   description:
+  //     "Apps para acompanhamento de processos, comunicação com clientes e gestão de prazos.",
+  //   highlight: false,
+  // },
+  // {
+  //   icon: Settings,
+  //   title: "Sistemas Web",
+  //   description:
+  //     "Sistemas personalizados de gestão de escritório, CRM jurídico e automação de documentos.",
+  //   highlight: false,
+  // },
   {
     icon: Wrench,
     title: "Manutenção e Suporte",

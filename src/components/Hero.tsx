@@ -61,8 +61,8 @@ export function Hero() {
             className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 font-body leading-relaxed animate-fade-in-up"
             style={{ animationDelay: "200ms" }}
           >
-            Desenvolvo sites profissionais, landing pages e sistemas web para
-            advogados que querem se destacar no mercado e conquistar mais
+            Desenvolvo sites profissionais, landing pages e sites institucionais
+            para advogados que querem se destacar no mercado e conquistar mais
             clientes.
           </p>
 
