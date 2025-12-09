@@ -248,7 +248,7 @@ export function Contact() {
 
               <div className="space-y-6">
                 <a
-                  href="https://wa.me/11912655674?text=Olá! Vim pelo site e gostaria de um orçamento."
+                  href="https://wa.me/5511912655674?text=Olá!+Vim+pelo+site+e+gostaria+de+um+orçamento."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-4 group"
@@ -329,7 +329,7 @@ export function Contact() {
                 className="w-full"
                 onClick={() =>
                   window.open(
-                    "https://wa.me/11912655674?text=Olá! Vim pelo site e gostaria de um orçamento.",
+                    "https://wa.me/5511912655674?text=Olá!+Vim+pelo+site+e+gostaria+de+um+orçamento.",
                     "_blank"
                   )
                 }

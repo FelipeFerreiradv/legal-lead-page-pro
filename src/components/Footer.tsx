@@ -40,7 +40,7 @@ export function Footer() {
             </p>
             <div className="flex gap-4">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/_felipe_dev?utm_source=qr&igsh=cGw1cWFhbzRtNmto"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300"
@@ -49,7 +49,7 @@ export function Footer() {
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/felipe-ferreira-4a45262a8/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300"
@@ -130,7 +130,7 @@ export function Footer() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="https://wa.me/11912655674?text=Olá! Vim pelo site e gostaria de um orçamento."
+                  href="https://wa.me/5511912655674?text=Olá!+Vim+pelo+site+e+gostaria+de+um+orçamento."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors duration-300"

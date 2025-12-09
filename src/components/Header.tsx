@@ -78,7 +78,7 @@ export function Header() {
         {/* CTA & Phone */}
         <div className="hidden md:flex items-center gap-4">
           <a
-            href="https://wa.me/11912655674?text=Olá! Vim pelo site e gostaria de um orçamento."
+            href="https://wa.me/5511912655674?text=Olá!+Vim+pelo+site+e+gostaria+de+um+orçamento."
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-300"

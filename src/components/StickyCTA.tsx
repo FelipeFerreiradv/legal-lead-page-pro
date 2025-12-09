@@ -35,7 +35,7 @@ export function StickyCTA() {
 
       {/* Desktop floating WhatsApp button */}
       <a
-        href="https://wa.me/11912655674?text=Olá! Vim pelo site e gostaria de um orçamento."
+        href="https://wa.me/5511912655674?text=Olá!+Vim+pelo+site+e+gostaria+de+um+orçamento."
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-40 hidden lg:flex items-center gap-3 bg-[#25D366] text-white px-5 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group"
