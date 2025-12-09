@@ -17,13 +17,17 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <a href="#" className="flex items-center gap-3 mb-6 group" aria-label="ONP - Página inicial">
+            <a
+              href="#"
+              className="flex items-center gap-3 mb-6 group"
+              aria-label="ONP - Página inicial"
+            >
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center shadow-gold">
-                <Code2 className="w-5 h-5 text-primary-foreground" />
+                <img src="/logo.png" alt="logo" width={25} height={25} />
               </div>
               <div>
                 <span className="font-display text-xl font-semibold text-foreground">
-                  O Novo Programador
+                  FELIPE FERREIRA DEV
                 </span>
                 <span className="block text-xs text-muted-foreground tracking-widest uppercase">
                   Sites para Advocacia
@@ -31,8 +35,8 @@ export function Footer() {
               </div>
             </a>
             <p className="text-muted-foreground text-sm font-body leading-relaxed mb-6">
-              Desenvolvedor especializado em criar sites profissionais e sistemas 
-              web para escritórios de advocacia em todo o Brasil.
+              Desenvolvedor especializado em criar sites profissionais e
+              sistemas web para escritórios de advocacia em todo o Brasil.
             </p>
             <div className="flex gap-4">
               <a
@@ -97,12 +101,24 @@ export function Footer() {
               Serviços
             </h3>
             <ul className="space-y-3">
-              <li className="text-muted-foreground font-body text-sm">Landing Pages</li>
-              <li className="text-muted-foreground font-body text-sm">Sites Institucionais</li>
-              <li className="text-muted-foreground font-body text-sm">E-Commerce Jurídico</li>
-              <li className="text-muted-foreground font-body text-sm">Sistemas Web</li>
-              <li className="text-muted-foreground font-body text-sm">Aplicativos Mobile</li>
-              <li className="text-muted-foreground font-body text-sm">Manutenção e Suporte</li>
+              <li className="text-muted-foreground font-body text-sm">
+                Landing Pages
+              </li>
+              <li className="text-muted-foreground font-body text-sm">
+                Sites Institucionais
+              </li>
+              <li className="text-muted-foreground font-body text-sm">
+                E-Commerce Jurídico
+              </li>
+              <li className="text-muted-foreground font-body text-sm">
+                Sistemas Web
+              </li>
+              <li className="text-muted-foreground font-body text-sm">
+                Aplicativos Mobile
+              </li>
+              <li className="text-muted-foreground font-body text-sm">
+                Manutenção e Suporte
+              </li>
             </ul>
           </div>
 
@@ -114,22 +130,22 @@ export function Footer() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="https://wa.me/5511999999999"
+                  href="https://wa.me/11912655674?text=Olá! Vim pelo site e gostaria de um orçamento."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
                   <Phone className="w-5 h-5" />
-                  <span className="font-body text-sm">(11) 99999-9999</span>
+                  <span className="font-body text-sm">(11) 91265-5674</span>
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:contato@onovoprogramador.com"
+                  href="mailto:fefelbf@gmail.com"
                   className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
                   <Mail className="w-5 h-5" />
-                  <span className="font-body text-sm">contato@onovoprogramador.com</span>
+                  <span className="font-body text-sm">fefelbf@gmail.com</span>
                 </a>
               </li>
             </ul>
@@ -150,13 +166,19 @@ export function Footer() {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-muted-foreground font-body text-center md:text-left">
-              © {currentYear} O Novo Programador. Todos os direitos reservados.
+              © {currentYear} FELIPE FERREIRA DEV. Todos os direitos reservados.
             </p>
             <div className="flex gap-4">
-              <a href="#politica-privacidade" className="text-xs text-muted-foreground hover:text-primary transition-colors">
+              <a
+                href="#politica-privacidade"
+                className="text-xs text-muted-foreground hover:text-primary transition-colors"
+              >
                 Política de Privacidade
               </a>
-              <a href="#termos-uso" className="text-xs text-muted-foreground hover:text-primary transition-colors">
+              <a
+                href="#termos-uso"
+                className="text-xs text-muted-foreground hover:text-primary transition-colors"
+              >
                 Termos de Uso
               </a>
             </div>

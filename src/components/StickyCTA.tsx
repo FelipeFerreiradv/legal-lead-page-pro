@@ -15,7 +15,7 @@ export function StickyCTA() {
       <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden glass border-t border-border p-3">
         <div className="flex items-center gap-3">
           <a
-            href="tel:+5511999999999"
+            href="tel:+5511912655674"
             className="flex-1 h-12 flex items-center justify-center gap-2 rounded-lg bg-muted text-foreground font-medium transition-colors hover:bg-muted/80"
             aria-label="Ligar agora"
           >
@@ -35,7 +35,7 @@ export function StickyCTA() {
 
       {/* Desktop floating WhatsApp button */}
       <a
-        href="https://wa.me/5511999999999?text=Olá! Gostaria de agendar uma consulta."
+        href="https://wa.me/11912655674?text=Olá! Vim pelo site e gostaria de um orçamento."
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-40 hidden lg:flex items-center gap-3 bg-[#25D366] text-white px-5 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group"

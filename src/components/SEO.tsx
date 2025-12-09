@@ -9,16 +9,16 @@ interface SEOProps {
 }
 
 export function SEO({
-  title = "O Novo Programador | Sites para Escritórios de Advocacia",
+  title = "Feliupe Ferreira Dev | Sites para Escritórios de Advocacia",
   description = "Desenvolvedor especializado em criar sites profissionais, landing pages e sistemas web para advogados. Conquiste mais clientes com um site à altura do seu escritório. Orçamento grátis.",
   keywords = "site para advogado, site para escritório de advocacia, landing page advogado, desenvolvimento web jurídico, criação de site advocacia, site institucional advogado",
   ogImage = "/og-image.jpg",
-  ogUrl = "https://onovoprogramador.com",
+  ogUrl = "https://felipeferreiradev.com",
 }: SEOProps) {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    name: "O Novo Programador",
+    name: "Feliupe Ferreira Dev",
     image: ogImage,
     description: description,
     url: ogUrl,
@@ -65,7 +65,8 @@ export function SEO({
           itemOffered: {
             "@type": "Service",
             name: "E-Commerce",
-            description: "Plataformas para venda de cursos e produtos jurídicos",
+            description:
+              "Plataformas para venda de cursos e produtos jurídicos",
           },
           priceSpecification: {
             "@type": "PriceSpecification",

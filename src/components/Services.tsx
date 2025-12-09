@@ -1,4 +1,11 @@
-import { Layout, Building2, ShoppingCart, Smartphone, Settings, Wrench } from "lucide-react";
+import {
+  Layout,
+  Building2,
+  ShoppingCart,
+  Smartphone,
+  Settings,
+  Wrench,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const services = [
@@ -7,7 +14,6 @@ const services = [
     title: "Landing Pages",
     description:
       "Páginas de alta conversão para captar clientes. Perfeita para campanhas de marketing e geração de leads qualificados.",
-    price: "R$ 800 - R$ 1.500",
     highlight: true,
   },
   {
@@ -15,7 +21,6 @@ const services = [
     title: "Sites Institucionais",
     description:
       "Sites completos e profissionais para apresentar seu escritório, áreas de atuação, equipe e credenciais.",
-    price: "R$ 1.500 - R$ 3.000",
     highlight: false,
   },
   {
@@ -23,7 +28,6 @@ const services = [
     title: "E-Commerce Jurídico",
     description:
       "Plataformas para venda de cursos, e-books, modelos de petições e consultorias online.",
-    price: "R$ 3.000 - R$ 8.000",
     highlight: false,
   },
   {
@@ -31,7 +35,6 @@ const services = [
     title: "Aplicativos Mobile",
     description:
       "Apps para acompanhamento de processos, comunicação com clientes e gestão de prazos.",
-    price: "R$ 5.000 - R$ 15.000",
     highlight: false,
   },
   {
@@ -39,7 +42,6 @@ const services = [
     title: "Sistemas Web",
     description:
       "Sistemas personalizados de gestão de escritório, CRM jurídico e automação de documentos.",
-    price: "R$ 5.000 - R$ 20.000",
     highlight: false,
   },
   {
@@ -47,7 +49,6 @@ const services = [
     title: "Manutenção e Suporte",
     description:
       "Atualizações, correções, melhorias de desempenho e suporte técnico contínuo para seu site.",
-    price: "R$ 30 - R$ 1.000/mês",
     highlight: false,
   },
 ];
@@ -84,8 +85,8 @@ export function Services() {
           </h2>
           <div className="gold-line mb-6" />
           <p className="text-muted-foreground text-lg font-body">
-            Do site simples ao sistema complexo, desenvolvo soluções sob medida para 
-            o mercado jurídico com foco em credibilidade e conversão.
+            Do site simples ao sistema complexo, desenvolvo soluções sob medida
+            para o mercado jurídico com foco em credibilidade e conversão.
           </p>
         </div>
 
@@ -123,11 +124,6 @@ export function Services() {
               <p className="text-muted-foreground font-body leading-relaxed mb-4">
                 {service.description}
               </p>
-
-              <p className="text-primary font-display text-lg font-semibold mb-6">
-                {service.price}
-              </p>
-
               <Button
                 variant="ghost"
                 className="group/btn p-0 h-auto text-primary hover:bg-transparent"

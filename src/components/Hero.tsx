@@ -61,8 +61,9 @@ export function Hero() {
             className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 font-body leading-relaxed animate-fade-in-up"
             style={{ animationDelay: "200ms" }}
           >
-            Desenvolvo sites profissionais, landing pages e sistemas web para advogados
-            que querem se destacar no mercado e conquistar mais clientes.
+            Desenvolvo sites profissionais, landing pages e sistemas web para
+            advogados que querem se destacar no mercado e conquistar mais
+            clientes.
           </p>
 
           {/* CTAs */}
@@ -75,7 +76,7 @@ export function Hero() {
               <ArrowRight className="w-5 h-5" />
             </Button>
             <Button variant="elegant" size="xl" onClick={scrollToPricing}>
-              Ver Planos e Preços
+              Ver Planos
             </Button>
           </div>
 
@@ -88,7 +89,9 @@ export function Hero() {
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-1">
                 <Monitor className="w-6 h-6 text-primary" />
               </div>
-              <span className="text-3xl font-display font-bold text-foreground">50+</span>
+              <span className="text-3xl font-display font-bold text-foreground">
+                50+
+              </span>
               <span className="text-sm text-muted-foreground font-body">
                 Sites entregues
               </span>
@@ -97,7 +100,9 @@ export function Hero() {
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-1">
                 <Rocket className="w-6 h-6 text-primary" />
               </div>
-              <span className="text-3xl font-display font-bold text-foreground">15 dias</span>
+              <span className="text-3xl font-display font-bold text-foreground">
+                15 dias
+              </span>
               <span className="text-sm text-muted-foreground font-body">
                 Prazo médio de entrega
               </span>
@@ -106,7 +111,9 @@ export function Hero() {
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-1">
                 <Sparkles className="w-6 h-6 text-primary" />
               </div>
-              <span className="text-3xl font-display font-bold text-foreground">100%</span>
+              <span className="text-3xl font-display font-bold text-foreground">
+                100%
+              </span>
               <span className="text-sm text-muted-foreground font-body">
                 Clientes satisfeitos
               </span>

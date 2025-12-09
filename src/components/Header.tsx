@@ -46,12 +46,12 @@ export function Header() {
           className="flex items-center gap-3 group"
           aria-label="ONP - Página inicial"
         >
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center shadow-gold group-hover:shadow-gold-lg transition-shadow duration-300">
-            <Code2 className="w-5 h-5 text-primary-foreground" />
+          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center shadow-gold">
+            <img src="/logo.png" alt="logo" width={25} height={25} />
           </div>
           <div className="hidden sm:block">
             <span className="font-display text-xl font-semibold text-foreground">
-              O Novo Programador
+              FELIPE FERREIRA DEV
             </span>
             <span className="block text-xs text-muted-foreground tracking-widest uppercase">
               Sites para Advocacia
@@ -60,7 +60,10 @@ export function Header() {
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-8" aria-label="Navegação principal">
+        <nav
+          className="hidden lg:flex items-center gap-8"
+          aria-label="Navegação principal"
+        >
           {navLinks.map((link) => (
             <button
               key={link.href}
@@ -75,7 +78,7 @@ export function Header() {
         {/* CTA & Phone */}
         <div className="hidden md:flex items-center gap-4">
           <a
-            href="https://wa.me/5511999999999"
+            href="https://wa.me/11912655674?text=Olá! Vim pelo site e gostaria de um orçamento."
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
@@ -99,25 +102,37 @@ export function Header() {
           aria-label={isMobileMenuOpen ? "Fechar menu" : "Abrir menu"}
           aria-expanded={isMobileMenuOpen}
         >
-          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {isMobileMenuOpen ? (
+            <X className="w-6 h-6" />
+          ) : (
+            <Menu className="w-6 h-6" />
+          )}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden glass border-t border-border/50 animate-fade-in">
-          <nav className="container mx-auto px-4 py-6 flex flex-col gap-4" aria-label="Menu mobile">
+        <div className="lg:hidden glass h-screen border-t flex mt-4 flex-col justify-center border-border/50 animate-fade-in">
+          <nav
+            className="container mx-auto px-4 py-6 flex flex-col gap-4"
+            aria-label="Menu mobile"
+          >
             {navLinks.map((link) => (
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
-                className="text-lg text-foreground/80 hover:text-primary transition-colors duration-300 text-left py-2 font-body"
+                className="text-4xl text-foreground/80 hover:text-primary transition-colors duration-300 text-left py-2 font-body"
               >
                 {link.label}
               </button>
             ))}
             <div className="pt-4 border-t border-border/50">
-              <Button variant="hero" size="lg" className="w-full" onClick={() => scrollToSection("#contato")}>
+              <Button
+                variant="hero"
+                size="lg"
+                className="w-full"
+                onClick={() => scrollToSection("#contato")}
+              >
                 Solicitar Orçamento
               </Button>
             </div>

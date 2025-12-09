@@ -4,8 +4,6 @@ import { Button } from "@/components/ui/button";
 const pricingPlans = [
   {
     name: "Landing Page",
-    price: "R$ 800",
-    priceMax: "R$ 1.500",
     description: "Página única focada em conversão de leads",
     features: [
       "Design responsivo e moderno",
@@ -22,8 +20,6 @@ const pricingPlans = [
   },
   {
     name: "Site Institucional",
-    price: "R$ 1.500",
-    priceMax: "R$ 3.000",
     description: "Site completo para seu escritório",
     features: [
       "Até 10 páginas personalizadas",
@@ -31,17 +27,15 @@ const pricingPlans = [
       "Página da equipe/advogados",
       "Blog integrado (opcional)",
       "SEO avançado",
-      "Painel administrativo",
       "Hospedagem por 1 ano inclusa",
       "Entrega em até 30 dias",
+      "Copiright que converte",
     ],
     highlighted: false,
     cta: "Quero meu Site",
   },
   {
     name: "Sistema Personalizado",
-    price: "R$ 5.000",
-    priceMax: "R$ 20.000",
     description: "Soluções sob medida para seu escritório",
     features: [
       "Análise de requisitos completa",
@@ -49,6 +43,7 @@ const pricingPlans = [
       "CRM jurídico / Gestão de processos",
       "Integração com APIs",
       "Treinamento da equipe",
+      "Painel administrativo",
       "Suporte prioritário",
       "Documentação completa",
     ],
@@ -88,8 +83,8 @@ export function Pricing() {
           </h2>
           <div className="gold-line mb-6" />
           <p className="text-muted-foreground text-lg font-body">
-            Preços transparentes e acessíveis. O valor final depende da complexidade 
-            do seu projeto.
+            Preços transparentes e acessíveis. O valor final depende da
+            complexidade do seu projeto.
           </p>
         </div>
 
@@ -118,25 +113,6 @@ export function Pricing() {
                 <p className="text-muted-foreground text-sm font-body mb-4">
                   {plan.description}
                 </p>
-                <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-sm text-muted-foreground font-body">
-                    a partir de
-                  </span>
-                </div>
-                <div className="flex items-baseline justify-center gap-2">
-                  <span
-                    className={`font-display text-4xl font-bold ${
-                      plan.highlighted ? "text-gold-gradient" : "text-foreground"
-                    }`}
-                  >
-                    {plan.price}
-                  </span>
-                  {plan.priceMax && (
-                    <span className="text-muted-foreground text-sm font-body">
-                      até {plan.priceMax}
-                    </span>
-                  )}
-                </div>
               </div>
 
               <ul className="space-y-4 mb-8">
@@ -171,17 +147,21 @@ export function Pricing() {
             <div className="grid sm:grid-cols-2 gap-6">
               <div className="flex justify-between items-center p-4 rounded-lg bg-muted/30">
                 <div>
-                  <p className="font-medium text-foreground">Manutenção Mensal</p>
-                  <p className="text-sm text-muted-foreground">Atualizações e suporte</p>
+                  <p className="font-medium text-foreground">
+                    Manutenção Mensal
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    Atualizações e suporte
+                  </p>
                 </div>
-                <p className="text-primary font-display font-semibold">R$ 30 - R$ 1.000/mês</p>
               </div>
               <div className="flex justify-between items-center p-4 rounded-lg bg-muted/30">
                 <div>
                   <p className="font-medium text-foreground">Hospedagem</p>
-                  <p className="text-sm text-muted-foreground">Servidor dedicado</p>
+                  <p className="text-sm text-muted-foreground">
+                    Servidor dedicado
+                  </p>
                 </div>
-                <p className="text-primary font-display font-semibold">R$ 30 - R$ 100/mês</p>
               </div>
             </div>
           </div>
@@ -189,7 +169,8 @@ export function Pricing() {
 
         {/* Disclaimer */}
         <p className="text-center text-sm text-muted-foreground mt-8 font-body max-w-2xl mx-auto">
-          * Os valores podem variar com base no levantamento de requisitos. Parcelamento em até 12x disponível.
+          * Os valores podem variar com base no levantamento de requisitos.
+          Parcelamento em até 12x disponível.
         </p>
       </div>
     </section>
