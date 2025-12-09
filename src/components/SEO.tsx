@@ -99,7 +99,7 @@ export function SEO({
       <meta name="title" content={title} />
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
-      <meta name="author" content="O Novo Programador" />
+      <meta name="author" content="Felipe Ferreira Dev" />
       <meta name="robots" content="index, follow" />
       <link rel="canonical" href={ogUrl} />
 
