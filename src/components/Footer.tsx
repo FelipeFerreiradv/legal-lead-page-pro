@@ -27,7 +27,7 @@ export function Footer() {
               </div>
               <div>
                 <span className="font-display text-xl font-semibold text-foreground">
-                  FELIPE FERREIRA DEV
+                  FELIPE FERREIRA
                 </span>
                 <span className="block text-xs text-muted-foreground tracking-widest uppercase">
                   Sites para Advocacia
@@ -166,7 +166,7 @@ export function Footer() {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-muted-foreground font-body text-center md:text-left">
-              © {currentYear} FELIPE FERREIRA DEV. Todos os direitos reservados.
+              © {currentYear} FELIPE FERREIRA. Todos os direitos reservados.
             </p>
             <div className="flex gap-4">
               <a

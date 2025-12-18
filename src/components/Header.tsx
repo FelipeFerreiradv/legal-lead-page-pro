@@ -51,7 +51,7 @@ export function Header() {
           </div>
           <div className="hidden sm:block">
             <span className="font-display text-xl font-semibold text-foreground">
-              FELIPE FERREIRA DEV
+              FELIPE FERREIRA
             </span>
             <span className="block text-xs text-muted-foreground tracking-widest uppercase">
               Sites para Advocacia
